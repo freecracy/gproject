@@ -24,5 +24,5 @@ package main
 import "github.com/freecracy/gproject/cmd"
 
 func main() {
-  cmd.Execute()
+	cmd.Execute()
 }

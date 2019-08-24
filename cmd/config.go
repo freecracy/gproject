@@ -17,15 +17,15 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
-	"github.com/go-chi/chi"
 	"github.com/spf13/cobra"
-	"net/http"
+	. "github.com/spf13/viper"
 )
 
-// startCmd represents the start command
-var startCmd = &cobra.Command{
-	Use:   "start",
+// configCmd represents the config command
+var configCmd = &cobra.Command{
+	Use:   "config",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -34,25 +34,27 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("start called")
-		r := chi.NewRouter()
-		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte("welcome"))
-		})
-		http.ListenAndServe(":3000", r)
+		fmt.Println("config called")
+		SetEnvPrefix("spf") // will be uppercased automatically
+		BindEnv("id")
+
+		os.Setenv("SPF_ID", "13") // typically done outside of the app
+
+		id := Get("id") // 13
+		fmt.Println(id)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(startCmd)
+	rootCmd.AddCommand(configCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// startCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// configCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// startCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// configCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

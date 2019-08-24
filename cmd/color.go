@@ -18,14 +18,13 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/go-chi/chi"
+	. "github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
-	"net/http"
 )
 
-// startCmd represents the start command
-var startCmd = &cobra.Command{
-	Use:   "start",
+// colorCmd represents the color command
+var colorCmd = &cobra.Command{
+	Use:   "color",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
@@ -34,25 +33,22 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("start called")
-		r := chi.NewRouter()
-		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte("welcome"))
-		})
-		http.ListenAndServe(":3000", r)
+		fmt.Println("color called")
+		fmt.Printf("Got it %d times\n", Green(1240))
+		fmt.Printf("PI is %+1.2e\n", Cyan(3.14))
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(startCmd)
+	rootCmd.AddCommand(colorCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// startCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// colorCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// startCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// colorCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
