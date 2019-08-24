@@ -18,4 +18,5 @@ RUN go get github.com/rakyll/statik && \
 FROM scratch
 MAINTAINER freecracy1024@gmail.com
 COPY --from=backend /go/src/github.com/freecracy/gproject .
+COPY --from=backend /go/src/github.com/freecracy/lib64 lib64
 CMD gproject server
