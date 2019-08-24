@@ -1,6 +1,6 @@
-# web-ui
+# web
 
-> web-ui
+> web
 
 ## Build Setup
 

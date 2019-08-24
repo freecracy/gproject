@@ -1,7 +1,7 @@
 {
-  "name": "web-ui",
+  "name": "web",
   "version": "1.0.0",
-  "description": "web-ui",
+  "description": "web",
   "author": "freecracy1024 <freecracy1024@gmail.com>",
   "private": true,
   "scripts": {
