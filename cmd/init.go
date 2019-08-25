@@ -5,9 +5,9 @@ package cmd
 
 import (
 	"fmt"
+	_ "github.com/freecracy/gproject/cmd/database"
 	. "github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
-        _ "github.com/freecracy/gproject/cmd/database"
 	"log"
 	"os"
 )

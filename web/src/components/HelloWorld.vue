@@ -5,7 +5,7 @@
     <ul>
       <li>
         <a
-          href="https://vuejs.org"
+          href="https://cn100800.tk"
           target="_blank"
         >
           Core Docs
@@ -13,7 +13,7 @@
       </li>
       <li>
         <a
-          href="https://forum.vuejs.org"
+          href="https://cn100800.tk"
           target="_blank"
         >
           Forum
@@ -21,7 +21,7 @@
       </li>
       <li>
         <a
-          href="https://chat.vuejs.org"
+          href="https://cn100800.tk"
           target="_blank"
         >
           Community Chat
@@ -29,7 +29,7 @@
       </li>
       <li>
         <a
-          href="https://twitter.com/vuejs"
+          href="https://twitter.com/freecracy1024"
           target="_blank"
         >
           Twitter
@@ -38,7 +38,7 @@
       <br>
       <li>
         <a
-          href="http://vuejs-templates.github.io/webpack/"
+          href="http://cn100800.tk"
           target="_blank"
         >
           Docs for This Template
@@ -73,10 +73,10 @@
       </li>
       <li>
         <a
-          href="https://github.com/vuejs/awesome-vue"
+          href="htts://cn100800.tk"
           target="_blank"
         >
-          awesome-vue
+          cn100800
         </a>
       </li>
     </ul>
@@ -88,7 +88,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to My App'
     }
   }
 }

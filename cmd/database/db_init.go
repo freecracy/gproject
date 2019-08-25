@@ -7,15 +7,14 @@ import (
 	"log"
 )
 
-
 func init() {
 	db, err := sql.Open("sqlite3", "/root/.gproject/gproject.db")
-        if err != nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
-        fmt.Println("DBchen")
-        sqlStmt := `
+	fmt.Println("DBchen")
+	sqlStmt := `
        		create table project (id integer not null primary key, name text);
                 create table project_ext (id integer not null primary key, name text) ;
                 create table stage (id integer not null primary key, name text) ;
