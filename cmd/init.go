@@ -7,6 +7,7 @@ import (
 	"fmt"
 	. "github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
+        _ "github.com/freecracy/gproject/cmd/database"
 	"log"
 	"os"
 )
