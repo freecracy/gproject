@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@master
+    - name: Build the Docker image
+      run: | 
+        docker build . --file Dockerfile --tag cn100800/gproject:$(date +%y%m%d)
+    - name: Push the Docker image
+      env:
+        U: ${{ secrets.U }}
+        P: ${{ secrets.P }}
+      run: |
+        docker login -u "$U" -p "$P"
+        docker push cn100800/gproject:$(date +%y%m%d)
