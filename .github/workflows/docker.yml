@@ -17,11 +17,11 @@ jobs:
     - uses: actions/checkout@master
     - name: Build the Docker image
       run: | 
-        docker build . --file Dockerfile --tag cn100800/gproject:$(date +%y%m%d)
+        docker build . --file Dockerfile --tag cn100800/gproject:${GITHUB_REF:10}
     - name: Push the Docker image
       env:
         U: ${{ secrets.U }}
         P: ${{ secrets.P }}
       run: |
         docker login -u "$U" -p "$P"
-        docker push cn100800/gproject:$(date +%y%m%d)
+        docker push cn100800/gproject:${GITHUB_REF:10}
