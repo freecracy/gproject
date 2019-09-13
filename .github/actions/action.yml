@@ -1,7 +1,0 @@
-name "build docker"
-
-description ""
-
-runs 
-   uses: 'docker'
-   images: 'Dockerfile'
