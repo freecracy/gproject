@@ -20,3 +20,5 @@ MAINTAINER freecracy1024@gmail.com
 COPY --from=backend /go/src/github.com/freecracy/gproject/gproject .
 COPY --from=backend /go/src/github.com/freecracy/gproject/lib64 lib64
 CMD gproject server
+
+# docker stop gproject && docker rm gproject &&  docker run -d --name gproject --restart=always -p 8080:8080 cn100800/gproject:$TAG /gproject server

@@ -1,3 +1,6 @@
+# 简介
+![](https://github.com/freecracy/gproject/workflows/Docker%20Image%20CI/badge.svg)
+
 # docker 安装
 
 ```bash

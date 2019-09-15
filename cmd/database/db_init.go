@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-func init() {
+func init1() {
 	db, err := sql.Open("sqlite3", "/root/.gproject/gproject.db")
 	if err != nil {
 		log.Fatal(err)

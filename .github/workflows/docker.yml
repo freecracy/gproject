@@ -25,3 +25,11 @@ jobs:
       run: |
         docker login -u "$U" -p "$P"
         docker push cn100800/gproject:${GITHUB_REF:10}
+    - name: deploy
+      env:
+          SSHUSER: ${{ secrets.NODE_USER }} 
+          SSHPASS: ${{ secrets.NODE_PASSWORD }}
+      run: |
+          command="docker stop gproject && docker rm gproject &&  docker run -d --name gproject --restart=always -p 8080:8080 cn100800/gproject:"${GITHUB_REF:10}" /gproject server"
+          echo $command
+          sshpass -e ssh -o StrictHostKeyChecking=no $SSHUSER@${{ secrets.NODE_IP }} -p ${{ secrets.NODE_PORT }} $command
