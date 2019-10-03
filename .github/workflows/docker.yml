@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build
 
 on: 
   push: 
@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Build the Docker image
       run: | 
-        docker build . --file Dockerfile --tag cn100800/gproject:${GITHUB_REF:10}
+        docker build  --file Dockerfile --tag cn100800/gproject:${GITHUB_REF:10} .
     - name: Push the Docker image
       env:
         U: ${{ secrets.U }}

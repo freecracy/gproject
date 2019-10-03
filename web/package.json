@@ -10,9 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@vue/cli": "^3.11.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "server": "^1.0.19",
     "vue": "^2.5.2",
-    "vue-cli": "^2.9.6",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
