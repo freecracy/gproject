@@ -25,6 +25,8 @@ jobs:
       run: |
         docker login -u "$U" -p "$P"
         docker push cn100800/gproject:${GITHUB_REF:10}
+        docker tag cn100800/gproject:${GITHUB_REF:10} cn100800/gproject:latest
+        docker push cn100800/gproject:latest
     - name: deploy
       env:
           SSHUSER: ${{ secrets.NODE_USER }} 
