@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker run --name gproject -d --restart always -p 8080:8080 docker.pkg.github.com/freecracy/gproject/gproject /gproject server
+
