@@ -11,3 +11,6 @@ curl https://raw.githubusercontent.com/freecracy/gproject/master/scripts/install
 ```bash
 http://localhost:8080/public/#/
 ```
+# 备注
+
+现阶段并未实现任何功能,只是代码如何部署
