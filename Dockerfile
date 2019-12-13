@@ -16,7 +16,7 @@ RUN go get github.com/rakyll/statik && \
     go build -ldflags="-s -w -extldflags -static"
 
 FROM scratch
-MAINTAINER freecracy1024@gmail.com
+LABEL maintainer="freecracy1024@gmail.com"
 COPY --from=backend /go/src/github.com/freecracy/gproject/gproject .
 #COPY --from=backend /go/src/github.com/freecracy/gproject/lib64 lib64
 COPY --from=backend ["/lib/x86_64-linux-gnu/", "lib/x86_64-linux-gnu/"]

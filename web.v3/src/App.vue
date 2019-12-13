@@ -13,8 +13,8 @@ import Menu from './components/Menu.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Menu
+    Menu,
+    HelloWorld
   }
 }
 </script>
