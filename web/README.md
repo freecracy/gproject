@@ -1,4 +1,4 @@
-# a
+# gproject-web
 
 ## Project setup
 ```

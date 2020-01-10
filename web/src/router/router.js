@@ -6,6 +6,18 @@ Vue.use(VueRouter)
 export const constantRoutes = [
     {
         name: 'a',
+        path: '/',
+        component: () => import('@/App'),
+        children: [
+            {
+                path: 'bar',
+                component: () => import('@/App'),
+                meta: { requiresAuth: true }
+            }
+        ]
+    },
+    {
+        name: 'a',
         path: '/a',
         component: () => import('@/App'),
         children: [

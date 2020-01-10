@@ -23,7 +23,7 @@ package main
 
 import "github.com/freecracy/gproject/cmd"
 
-//go:generate statik -src=web.v3/dist
+//go:generate statik -src=web/dist
 //go:generate gofmt -l -w .
 func main() {
 	cmd.Execute()

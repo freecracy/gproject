@@ -1,28 +1,12 @@
-/*
-Copyright © 2019 NAME HERE <EMAIL ADDRESS>
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package cmd
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
-	_ "github.com/freecracy/gproject/statik"
+	"github.com/apex/log"
+	"github.com/apex/log/handlers/cli"
+	_ "github.com/freecracy/gproject/statik" // Register some standard stuff
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cobra"
+	"net/http"
 )
 
 // serverCmd represents the server command
@@ -36,13 +20,11 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("server called")
-
+		log.Info("http://localhost:8080/public/#/")
 		statikFS, err := fs.New()
 		if err != nil {
-			log.Fatal(err)
+			log.Info(err.Error())
 		}
-
 		http.Handle("/", http.StripPrefix("/public/", http.FileServer(statikFS)))
 		http.ListenAndServe(":8080", nil)
 	},
@@ -50,7 +32,7 @@ to quickly create a Cobra application.`,
 
 func init() {
 	rootCmd.AddCommand(serverCmd)
-
+	log.SetHandler(cli.Default)
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
